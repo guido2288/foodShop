@@ -1,13 +1,34 @@
-import ListShop from "./components/ListShop"
+
+import ItemFood from "./components/ItemFood"
+import { data } from "./data/products"
+import { getImagesUrl } from "./util/image-util"
 
 
-function App() {
 
+
+function App() {  
+
+  console.log(data)
 
   return (
     <main>
       <h2>Desserts</h2>
-      <ListShop />
+
+      <section className="list-container">
+
+        {
+          data.map( (item , idx) => (
+            <ItemFood 
+              key={idx}
+              name={item.name}
+              category={item.category}
+              price={item.price}
+              image={getImagesUrl(item.image.mobile)}
+            />
+          ) )
+        }
+      </section>
+      
     </main>
   )
 }
