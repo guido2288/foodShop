@@ -1,19 +1,25 @@
 
+import { useState } from "react";
+import Cart from "./components/Cart"
 import ItemFood from "./components/ItemFood"
 import { data } from "./data/products"
 import { getImagesUrl } from "./util/image-util"
-
-
+import { FiShoppingCart } from "react-icons/fi";
 
 
 function App() {  
 
-  console.log(data)
-
   return (
-    <main>
-      <h2>Desserts</h2>
+   
+      <main>
+      <nav>
+        <h2>Desserts</h2>
+        <div className="cart-icon-container">
+          <FiShoppingCart className="cart-icon"/>
+          <span>0</span>
+        </div>
 
+      </nav>
       <section className="list-container">
 
         {
@@ -28,8 +34,12 @@ function App() {
           ) )
         }
       </section>
-      
-    </main>
+
+      <section>
+        <Cart cart={0}/>
+      </section>
+      </main>
+
   )
 }
 

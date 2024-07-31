@@ -30,6 +30,32 @@ main{
   padding: 1rem;
 }
 
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-icon-container{
+  position: relative;
+}
+
+.cart-icon-container span{
+  z-index: 10;
+  position: absolute;
+  bottom: 22px;
+  left: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.cart-icon{
+  font-size: 1.5rem;
+  color: var(--Rose500);
+  cursor: pointer;
+  z-index: 5;
+}
+
 h2{
   font-size: 2rem;
 }
@@ -48,14 +74,14 @@ h2{
 .food-card img{
   width: 100%;
   border-radius: 7px;
+  /* border: solid 2px var(--Red); */
 }
 
 .card-btn{
   position: absolute;
-  top: 100%;
+  bottom: -2.2rem;
   left: 50%;
   transform: translate(-50%, -50%);
-
 }
 
 .card-btn{
@@ -68,6 +94,7 @@ h2{
   font-size: 0.8rem;
   font-weight: 700;
   color: var(--Rose900);
+  cursor: pointer;
 }
 
 .card-text{
@@ -97,4 +124,27 @@ h2{
   font-size: 1.5rem;
   color: var(--Rose500);
   margin-right: 0.5rem;
+}
+
+.cart-container{
+  background-color: white;
+  border-radius: 7px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-container h3{
+  color: var(--Red);
+}
+
+.cart-container img{
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+.cart-container p{
+  color: var(--Rose500);
+  font-weight: 600;
 }
