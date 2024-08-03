@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { BiCartAdd } from "react-icons/bi";
+import { CiCirclePlus , CiCircleMinus } from "react-icons/ci";
+
+
 
 
 const ItemFood = ({ name, category , price , image }) => {
@@ -12,7 +15,7 @@ const ItemFood = ({ name, category , price , image }) => {
         setActive(!active)
     }
 
-    const activeStyle = !active ? {border: "solid 2px transparent"} : {border: "solid 2px var(--Rose500)"};
+    const activeStyle = !active ? {border: "solid 2px transparent"} : {border: "solid 2px var(--Red)"};
 
 
 
@@ -22,15 +25,22 @@ const ItemFood = ({ name, category , price , image }) => {
               <div className="card-img-container">
                 <img src={image} alt={name} style={activeStyle}/>
 
-
-                <button 
-                    className="card-btn"
-                    onClick={handleClick}
-                    >
-                    <BiCartAdd className="add-icon"/>
-                        Add to Card
-                </button>
-
+                {
+                    !active ? 
+                        <button className="card-btn" onClick={handleClick}>
+                            <BiCartAdd className="add-icon"/>
+                            Add to Card
+                        </button> 
+                        :
+                        <button 
+                            className="active-btn" 
+                            onClick={handleClick}
+                            >
+                            <CiCirclePlus />
+                                0
+                            <CiCircleMinus />
+                    </button>
+                }
               </div>
               <div className="card-text">
                   <p>{category}</p>

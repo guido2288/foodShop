@@ -7,7 +7,19 @@ import { getImagesUrl } from "./util/image-util"
 import { FiShoppingCart } from "react-icons/fi";
 
 
-function App() {  
+function App() {
+  
+  const [cart, setCart] = useState([{
+    name: "Waffle with Berries",
+    quantity: 2,
+    price: 6.5
+  },
+  {
+    name: "Waffle with Berries",
+    quantity: 2,
+    price: 6.5
+  }
+])
 
   return (
    
@@ -36,7 +48,7 @@ function App() {
       </section>
 
       <section>
-        <Cart cart={0}/>
+        <Cart cart={cart}/>
       </section>
       </main>
 
